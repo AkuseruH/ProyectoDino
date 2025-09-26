@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Profesional</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="portfolio-container">
+        <header class="header-navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#proyectos-seccion">Proyectos</a>
+        </header>
+
+        <section class="seccion" id="inicio">
+            <h2>¡Hola! Soy Axel Cruz</h2>
+            <p></p>
+            <img src="proyecto/assets/fotoPerfil.jpg" alt="Foto de perfil de Axel" class="profile-pic">
+        </section>
+        <section class="seccion" id="proyectos-seccion">
+            <h2>TECNOLOGIOCO DE ESTUDIOS SUPERIORES DE ECATEPEC</h2>
+            <div class="description-card">
+                
+                <p>¡Bienvenido a mi portafolio!
+                <p> Soy Alumno de la carrera de Ing. Informatica del Grupo: 15601</p>
+            </div>
+        </section>
+
+        <section class="seccion" id="proyectos-seccion">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="practicas-desplegable">
+                    <div class="practicas-toggle">
+                        <h3>Prácticas</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="practicas-container collapsed">
+                        <div class="tarjeta">
+                            <h3>Práctica 3: </h3>
+                            <h3>MindfulPath</h3>
+                            <p>Landing Page Interactiva con Validación de Formulario</p>
+                            <a href="practicas/Practica 3/public/index.html">Ver Práctica</a>
+                        </div>
+                        <div class="tarjeta">
+                            <h3>Práctica 4:</h3>
+                            <h3>Memorama</h3>
+                            <p>Juego de Memoria con Cartas Personalizadas</p>
+                            <a href="practicas/Practica 4/public/index.html">Ver Práctica</a>
+                        </div>
+                        <div class="tarjeta">
+                            <h3>Práctica 5</h3>
+                            <h3>Clima</h3>
+                            <p>App de Clima Local con API y Geolocalización</p>
+                            <a href="practicas/Practica 5/public/index.html">Ver Práctica</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tarjeta" id="proyecto">
+                    <h3>Dino Vaporwave</h3>
+                    <p>Un juego de corredor infinito con estética vaporwave, desarrollado con HTML Canvas, JavaScript puro y un servidor Node.js.</p>
+                    <a href="proyecto/game.html" class="game-button">Jugar Ahora</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="toggle.js"></script>
+
+</body>
+</html>

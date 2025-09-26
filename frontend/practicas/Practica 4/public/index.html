@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Juego de Memoria</h1>
+        <div class="info-bar">
+            <div class="info-item">Tiempo: <span id="time">60s</span></div>
+            <div class="info-item">Intentos: <span id="attempts">0</span></div>
+            <div class="info-item">Puntos: <span id="score">0</span></div>
+            <button id="restart-btn">Reiniciar</button>
+        </div>
+        <div class="memory-grid" id="memory-grid"></div>
+        <div id="win-message" class="hidden">
+            ¡Felicidades, ganaste! 🎉<br>
+            <span id="final-score"></span>
+        </div>
+        <div id="lose-message" class="hidden">
+            ¡Se acabó el tiempo! 😔<br>
+            <span id="final-score-lose"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

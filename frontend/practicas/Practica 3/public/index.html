@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar y Mindfulness: Conecta Contigo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">MindfulPath</div>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#benefits">Beneficios</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#subscribe">Suscríbete</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Encuentra la Calma en el Caos Diario</h1>
+                <p>Descubre el poder del mindfulness para transformar tu vida. Conecta con tu interior y vive el presente.</p>
+                <button class="cta-button pulse" onclick="location.href='#subscribe'">Empieza tu Viaje Ahora</button>
+            </div>
+        </section>
+
+        <section id="about" class="about-section fade-in-section">
+            <div class="content-wrapper">
+                <article>
+                    <h2>¿Qué es el Mindfulness?</h2>
+                    <p>El mindfulness, o atención plena, es la capacidad de estar presente y plenamente consciente de lo que ocurre en el momento actual, sin juicios. Nos ayuda a observar nuestros pensamientos y emociones desde una perspectiva más clara, reduciendo el estrés y cultivando la paz interior.</p>
+                    <p>A través de prácticas sencillas, puedes integrar el mindfulness en tu día a día y experimentar una mayor serenidad y bienestar.</p>
+                </article>
+                <div class="image-container">
+                     <img src="mindfunless_amanecer.png" alt="Persona meditando al amanecer en la montaña"> 
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="benefits-section">
+            <h2>Beneficios de Practicar Mindfulness</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in-up">
+                    <h3>Reducción del Estrés</h3>
+                    <p>Aprende a manejar el estrés de forma efectiva y a responder a los desafíos con mayor calma.</p>
+                </div>
+                <div class="benefit-item fade-in-up">
+                    <h3>Mejora la Concentración</h3>
+                    <p>Aumenta tu capacidad de atención y enfócate mejor en tus tareas diarias.</p>
+                </div>
+                <div class="benefit-item fade-in-up">
+                    <h3>Mayor Bienestar Emocional</h3>
+                    <p>Desarrolla una relación más saludable con tus emociones y cultiva la resiliencia.</p>
+                </div>
+                <div class="benefit-item fade-in-up">
+                    <h3>Sueño Reparador</h3>
+                    <p>Facilita la relajación profunda y mejora la calidad de tu descanso nocturno.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="form-section fade-in-section">
+            <article class="contact-form-container">
+                <h2>Conéctate con Nosotros</h2>
+                <img src="mindfulness_contact.png" alt="Persona meditando en la naturaleza" class="section-image">
+                <p>Envíanos tus preguntas o comentarios. Estamos aquí para escucharte y guiarte.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" id="submitBtn">Enviar Mensaje</button>
+                </form>
+            </article>
+        </section>
+
+        <section id="subscribe" class="subscribe-section fade-in-section">
+            <article class="subscribe-container">
+                <h2>¡Únete a Nuestra Comunidad de Mindfulness!</h2>
+                <img src="mindfulness_subscribe.png" alt="Mano sosteniendo una planta pequeña, símbolo de crecimiento y paz" class="section-image">
+                <p>Suscríbete para recibir consejos, meditaciones y novedades exclusivas sobre mindfulness directamente en tu bandeja de entrada.</p>
+                <button id="subscribeBtn">Suscribirse Ahora</button>
+                <div id="confetti-container"></div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MindfulPath. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modal-message"></p>
+            <div id="modal-confetti-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

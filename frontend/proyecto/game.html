@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dino Juego - Vaporwave</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <audio id="musicaFondo" src="assets/musica.mp3" loop></audio>
+
+    <div class="contenedor" id="pantalla-inicio-juego">
+        <h1>¡Bienvenido!</h1>
+        <p>Ingresa tu nombre para comenzar a jugar:</p>
+        <input type="text" id="usuario" placeholder="Tu nombre">
+        <button id="btnEntrar">Empezar</button>
+        
+        <div class="tabla-scores">
+            <h3>Mejores Puntuaciones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Puntaje</th>
+                        <th>Nivel</th>
+                    </tr>
+                </thead>
+                <tbody id="scores-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="area-juego oculto" id="juego-principal">
+        <div class="arcade-frame">
+            <div class="game-screen-container">
+                <canvas id="juegoCanvas" width="800" height="400"></canvas>
+            </div>
+            <div class="arcade-hud" id="infoJuego">
+                <div class="hud-item">
+                    <span>Puntaje</span>
+                    <span id="puntaje">0</span>
+                </div>
+                <div class="hud-item">
+                    <span>Nivel</span>
+                    <span id="nivel">1</span>
+                </div>
+                <div class="hud-item">
+                    <span>Mejor Puntaje</span>
+                    <span id="maximo">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pantalla-gameover oculto">
+        <h2>GAME OVER</h2>
+        <p>Tu puntaje final: <span id="puntajeFinalGameOver">0</span></p>
+        <button id="btnReintentar">Reintentar</button>
+        <button id="btnCambiarNombre">Cambiar nombre</button>
+        <button id="btnSalir">Salir</button>
+    </div>
+
+    <script type="module" src="game.js"></script>
+</body>
+</html>

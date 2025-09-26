@@ -1,0 +1,282 @@
+/* ----------------- Variables y Estilos Base ----------------- */
+:root {
+  --color-cian: #6afff1;
+  --color-magenta: #ff6afc;
+  --color-purpura-oscuro: #28104a;
+  --color-neon-brillo: #ff00ff;
+  --color-sombra: rgba(255, 0, 255, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  background: 
+    linear-gradient(220deg, var(--color-purpura-oscuro) 0%, var(--color-magenta) 100%),
+    radial-gradient(ellipse at top left, var(--color-cian) 0%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, var(--color-purpura-oscuro) 100%),
+    linear-gradient(315deg, transparent 50%, var(--color-magenta) 100%);
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fondoAnimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ----------------- Estilos del Contenedor Principal ----------------- */
+.contenedor {
+  text-align: center;
+  background: rgba(40, 16, 74, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  border: 2px solid var(--color-cian);
+  box-shadow: 0 0 30px var(--color-sombra);
+  max-width: 900px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: var(--color-cian);
+  text-shadow: 0 0 10px var(--color-cian);
+}
+
+/* ----------------- Estilos de Formulario y Botones ----------------- */
+input {
+  width: 90%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid var(--color-magenta);
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px var(--color-magenta);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-cian);
+  box-shadow: 0 0 15px var(--color-cian);
+}
+
+button {
+  width: 80%;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--color-neon-brillo);
+  color: var(--color-purpura-oscuro);
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: var(--color-cian);
+  color: white;
+  box-shadow: 0 0 15px var(--color-cian);
+  transform: translateY(-2px);
+}
+
+/* ----------------- Estilos de la Zona de Juego (Canvas) ----------------- */
+.area-juego {
+  position: relative;
+  /* Dimensiones para dar espacio al HUD en la derecha */
+  width: 1000px; 
+  height: 450px;
+}
+
+/* Gran marco exterior para todo el área del juego */
+.arcade-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    gap: 20px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 5px solid var(--color-magenta);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--color-sombra);
+}
+
+/* Contenedor para el canvas con su propio marco */
+.game-screen-container {
+    border: 5px solid var(--color-cian);
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 0 15px var(--color-cian), inset 0 0 15px var(--color-purpura-oscuro);
+}
+
+#juegoCanvas {
+    display: block;
+    background-color: transparent;
+    box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, 0.7); 
+}
+
+/* ----------------- Estilos del HUD de Arcade ----------------- */
+.arcade-hud {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--color-magenta);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px var(--color-magenta);
+    margin: 10px 0;
+}
+
+.hud-item span:first-child {
+    font-size: 0.9rem;
+    color: var(--color-cian);
+    text-shadow: 0 0 5px var(--color-cian);
+}
+
+.hud-item span:last-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-neon-brillo);
+    text-shadow: 0 0 8px var(--color-neon-brillo);
+}
+
+
+/* Ocultar elementos */
+.oculto {
+  display: none !important;
+}
+
+/* ----------------- Estilo de la Tabla de Puntuación ----------------- */
+.tabla-scores {
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--color-magenta);
+}
+
+.tabla-scores h3 {
+  color: var(--color-magenta);
+  text-shadow: 0 0 8px var(--color-magenta);
+}
+
+.tabla-scores table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-scores th, .tabla-scores td {
+  padding: 8px;
+  border: 1px solid var(--color-purpura-oscuro);
+  color: var(--color-cian);
+}
+
+.tabla-scores th {
+  background: var(--color-purpura-oscuro);
+  color: var(--color-magenta);
+}
+
+/* ----------- PANTALLA GAME OVER ----------- */
+.pantalla-gameover {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: var(--color-neon-brillo);
+  text-shadow: 0 0 15px var(--color-neon-brillo);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.pantalla-gameover h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+  animation: flickerText 1.5s infinite alternate;
+}
+
+.pantalla-gameover p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--color-cian);
+  text-shadow: 0 0 8px var(--color-cian);
+}
+
+.pantalla-gameover button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: 2px solid var(--color-magenta);
+  background: var(--color-purpura-oscuro);
+  color: var(--color-cian);
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--color-magenta);
+  transition: all 0.3s ease;
+}
+
+.pantalla-gameover button:hover {
+  background: var(--color-neon-brillo);
+  color: var(--color-purpura-oscuro);
+  border-color: var(--color-neon-brillo);
+  box-shadow: 0 0 25px var(--color-neon-brillo);
+  transform: scale(1.05);
+}
+
+/* Animación para el efecto de parpadeo del texto */
+@keyframes flickerText {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 
+      0 0 4px var(--color-neon-brillo), 
+      0 0 10px var(--color-neon-brillo), 
+      0 0 20px var(--color-neon-brillo);
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+    opacity: 0.8;
+  }
+}
+
+/* Animación de aparición para la pantalla */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
